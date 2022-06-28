@@ -1,5 +1,5 @@
-const crixa = require('discord.js');
-const client = new crixa.Client();
+const Discord = require('discord.js');
+const client = new Discord.Client({intents:98303});
 const ayarlar = require('./ayarlar.json');
 const chalk = require('chalk');
 const { Client, Util } = require('discord.js');
@@ -27,8 +27,8 @@ const log = message => {
     console.log(`${message}`);
 };
 
-client.commands = new crixa.Collection();
-client.aliases = new crixa.Collection();
+client.commands = new Discord.Collection();
+client.aliases = new Discord.Collection();
 fs.readdir('./komutlar/', (err, files) => {
     if (err) console.error(err);
     log(`${files.length} komut yüklenecek.`);
